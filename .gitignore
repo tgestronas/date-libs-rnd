@@ -60,3 +60,7 @@ cache/
 
 
 .eslintcache
+
+# Next.js
+.next
+out
