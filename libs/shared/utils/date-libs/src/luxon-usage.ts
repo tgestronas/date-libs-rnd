@@ -33,7 +33,7 @@ export function testLuxonUsage({
   console.log('Разница в днях:', diffInDays);
 
   // 3. Таймзоны
-  console.log('В Europe/Minsk:', base.setZone('UTC').toString());
+  console.log('В Europe/Minsk:', base.setZone(timeZone).toString());
   console.log('В Asia/Tokyo:', base.setZone('Asia/Tokyo').toString());
 
   // 4. Интернационализация

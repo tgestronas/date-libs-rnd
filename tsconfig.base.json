@@ -30,5 +30,6 @@
       "@date-libs-rnd/web/shared/utils/app-env": ["libs/web/shared/utils/app-env/src/index.ts"],
       "@date-libs-rnd/web/shared/utils/i18n": ["libs/web/shared/utils/i18n/src/index.ts"]
     }
-  }
+  },
+  "exclude": ["node_modules", "tmp", "**/*.config.cjs", "**/*.config.js", "**/*.cjs", "**/*.mjs"]
 }
