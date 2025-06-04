@@ -1,4 +1,4 @@
-import { mockDateInputs, testTemporalUsage, testLuxonUsage } from '@date-libs-rnd/shared/utils/date-libs';
+import { mockDateInputs, testDateFnsUsage } from '@date-libs-rnd/shared/utils/date-libs';
 import React, { useRef, useState } from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, TouchableOpacity, Linking } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
@@ -7,10 +7,11 @@ export const App = () => {
   const [whatsNextYCoord, setWhatsNextYCoord] = useState<number>(0);
   const scrollViewRef = useRef<null | ScrollView>(null);
 
-  testLuxonUsage(mockDateInputs);
+  //testLuxonUsage(mockDateInputs);
   console.log('<====================>');
-  testTemporalUsage(mockDateInputs);
+  //testTemporalUsage(mockDateInputs);
   console.log('<====================>');
+  testDateFnsUsage(mockDateInputs);
 
   return (
     <React.Fragment>

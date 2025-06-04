@@ -57,6 +57,6 @@ export function testLuxonUsage({
   // NOTE: С Hermes проблема с Intl.ListFormat, нужен полифилл
   if (isIntlListFormatAvailable) {
     console.log('1ч 45м humanized:', duration.toHuman({ listStyle: 'narrow' }));
-    console.log('2д 3ч из diff:', diffDuration.toHuman({ listStyle: 'narrow' }));
+    console.log('diff:', diffDuration.toHuman({ listStyle: 'narrow' }));
   }
 }
