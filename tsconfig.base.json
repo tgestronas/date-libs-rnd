@@ -1,5 +1,13 @@
 {
   "compilerOptions": {
+    "jsx": "react-native",
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "strictPropertyInitialization": false,
+    "strictNullChecks": true,
     "composite": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
@@ -14,7 +22,6 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,
-    "strict": true,
     "target": "es2022",
     "customConditions": ["development"]
   }

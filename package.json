@@ -2,7 +2,12 @@
   "name": "@date-libs-rnd/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "lint": "npx tsc && npx eslint ./",
+    "format": "npx prettier --write . && npm run lint -- --fix",
+    "prepare": "husky install",
+    "deps:sync": "npx syncpack fix-mismatches"
+  },
   "private": true,
   "dependencies": {
     "@expo/metro-config": "~0.19.4",
@@ -18,36 +23,52 @@
     "react-native-web": "~0.19.13"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.6",
+    "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.8.0",
     "@expo/cli": "~0.21.8",
     "@nx/eslint": "21.1.2",
     "@nx/eslint-plugin": "21.1.2",
-    "@nx/expo": "21.1.2",
+    "@nx/expo": "^21.1.2",
     "@nx/js": "21.1.2",
     "@nx/workspace": "21.1.2",
     "@ronas-it/nx-generators": "^0.14.0",
+    "@stylistic/eslint-plugin": "^2.12.1",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
     "@testing-library/jest-native": "~5.4.3",
     "@testing-library/react-native": "~12.9.0",
     "@types/react": "~18.3.12",
+    "@typescript-eslint/eslint-plugin": "^8.18.1",
+    "@typescript-eslint/parser": "^8.18.1",
     "babel-preset-expo": "~12.0.1",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.0.0",
+    "eslint-import-resolver-typescript": "^3.7.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.1",
     "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "5.0.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.7",
     "jest-expo": "~52.0.2",
+    "lint-staged": "^15.5.2",
     "nx": "21.1.2",
-    "prettier": "^2.6.2",
+    "prettier": "^3.3.2",
     "react-test-renderer": "~18.3.1",
+    "syncpack": "^12.3.2",
+    "tsc-files": "^1.1.4",
     "tslib": "^2.3.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.19.0"
   },
   "workspaces": [
     "apps/*"
-  ]
+  ],
+  "lint-staged": {
+    "*.{ts,tsx}": "tsc-files --noEmit types.d.ts",
+    "*.{ts,tsx,js,html,json,md}": "prettier --write",
+    "*.{ts,tsx,js}": "eslint --cache --fix"
+  }
 }
