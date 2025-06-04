@@ -1,4 +1,4 @@
-import { mockDateInputs, testDateFnsUsage } from '@date-libs-rnd/shared/utils/date-libs';
+import { mockDateInputs, testDateFnsUsage, testDayjsUsage } from '@date-libs-rnd/shared/utils/date-libs';
 import React, { useRef, useState } from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, TouchableOpacity, Linking } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
@@ -8,10 +8,11 @@ export const App = () => {
   const scrollViewRef = useRef<null | ScrollView>(null);
 
   //testLuxonUsage(mockDateInputs);
-  console.log('<====================>');
+  //console.log('<====================>');
   //testTemporalUsage(mockDateInputs);
-  console.log('<====================>');
-  testDateFnsUsage(mockDateInputs);
+  //console.log('<====================>');
+  //testDateFnsUsage(mockDateInputs);
+  testDayjsUsage(mockDateInputs);
 
   return (
     <React.Fragment>
